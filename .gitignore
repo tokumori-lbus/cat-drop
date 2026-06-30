@@ -1,0 +1,5 @@
+games.venv/
+__pycache__/
+*.pyc
+debug.log
+highscore.txt
