@@ -64,7 +64,7 @@ class Scene(BaseScene):
             logging.debug("jellyfish spawner added")
 
             if self.score.points%50 == 0 and self.score.points != 0:
-                self.universal = (self.universal*2)/3
+                self.universal = (self.universal)/3
                 
                 logging.debug("jellyfish spawner added at 50 points")
 
