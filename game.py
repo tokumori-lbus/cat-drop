@@ -34,6 +34,7 @@ class Scene(BaseScene):
             self.cols = 100
             self.rows = 35
 
+            self.universal = 15
 
             self.wall_A = Wall(position=-1)
             self.add_object(self.wall_A)
@@ -53,14 +54,22 @@ class Scene(BaseScene):
             self.add_action(Keyboard())
             logging.debug("keyboard added")
 
-            self.add_action(FishSpawner(self, 15))
+            self.add_action(FishSpawner(self, self.universal))
+
             logging.debug("spawner added")
 
-            self.add_action(JellyFishSpawner(self, 15))
+            self.add_action(JellyFishSpawner(self, self.universal))
             self.add_action(JellyFishSpawner(self, 30))
+            
             logging.debug("jellyfish spawner added")
 
+            if self.score.points%50 == 0 and self.score.points != 0:
+                self.universal = (self.universal*2)/3
+                
+                logging.debug("jellyfish spawner added at 50 points")
+
             self.add_action(GameOverChecker(self))
+
 
         except Exception as e:
             logging.exception("crash in Scene.__init__")

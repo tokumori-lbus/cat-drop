@@ -42,7 +42,7 @@ class outrotext(Object):
         self.x = 42
         self.y = 25
         self.color = 'green'
-        self.score = load_highscore
+        self.score = load_highscore()
     def __str__(self):
         return f"High Score: {self.score}\nPress q to QUIT \nPress r to RESTART"
     

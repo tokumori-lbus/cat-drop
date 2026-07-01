@@ -23,4 +23,3 @@ class Score(Object):
 
     def __str__(self):
         return 'Points: {}'.format(self.points)
-    
