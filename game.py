@@ -17,7 +17,7 @@ force_terminal_size(40, 102)
 # Now import pygamii
 from pygamii.scene import BaseScene
 from wallers import Wall
-from fishes import FishSpawner, JellyFishSpawner
+from fishes import FishSpawner, JellyFishSpawner, goldFishSpawner
 from cat import Keyboard, Car
 from score import LiveScore, Score
 from title import menu
@@ -63,8 +63,10 @@ class Scene(BaseScene):
             
             logging.debug("jellyfish spawner added")
 
+            self.add_action(goldFishSpawner(self, 100))
+
             if self.score.points%50 == 0 and self.score.points != 0:
-                self.universal = (self.universal*2)/3
+                self.universal = (self.universal)/2.5
                 
                 logging.debug("jellyfish spawner added at 50 points")
 
