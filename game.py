@@ -66,7 +66,11 @@ class Scene(BaseScene):
             self.add_action(goldFishSpawner(self, 100))
 
             if self.score.points%50 == 0 and self.score.points != 0:
+<<<<<<< HEAD
                 self.universal = (self.universal)/2.5
+=======
+                self.universal = (self.universal)/3
+>>>>>>> 84c19e42cd1a2a2493911e5caeb58fdaf3dba598
                 
                 logging.debug("jellyfish spawner added at 50 points")
 
